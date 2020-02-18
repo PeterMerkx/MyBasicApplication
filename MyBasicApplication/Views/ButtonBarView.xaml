@@ -17,6 +17,26 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
+        <Button x:Name="newButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="10,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding NewCommand}">
+            <StackPanel>
+                <Image Source="/Images/New File.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="browseButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="45,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding BrowseCommand}">
+            <StackPanel>
+                <Image Source="/Images/Open File.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="saveButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="80,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding SaveCommand}">
+            <StackPanel>
+                <Image Source="/Images/Save.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="exitButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="115,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ExitCommand}">
+            <StackPanel>
+                <Image Source="/Images/exit.png"></Image>
+            </StackPanel>
+        </Button>
         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="ButtonBar Area"/>
     </Grid>
 </UserControl>

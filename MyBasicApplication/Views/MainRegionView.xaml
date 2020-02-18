@@ -17,8 +17,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="WhiteSmoke" Text="Main Area"/>
-        <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="Select Me ..." Style="{StaticResource ToggleButtonStyle}" ClickMode="Press"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="Click Me ..." Style="{StaticResource 3DButtonStyle}" ClickMode="Press"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Foreground="WhiteSmoke" Text="Main Area"/>
+        <ToggleButton HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="Select Me ..." Style="{StaticResource ToggleButtonStyle}" ClickMode="Press" Command="{Binding SelectedCommand}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="Click Me ..." Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ClickedCommand}"/>
     </Grid>
 </UserControl>

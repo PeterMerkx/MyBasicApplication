@@ -1,39 +1,32 @@
-﻿using System;
+﻿using MyBasicApplication.Core;
+using MyBasicApplication.Properties;
+using Prism.Commands;
+using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
-using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Regions;
-using MyBasicApplication.Core;
-using MyBasicApplication.Views;
-using MyBasicApplication.Properties;
-using MyBasicApplication.Converters;
 
 namespace MyBasicApplication.ViewModels
 {
-
-    public class MenuBarViewModel : BindableBase
+    public class ButtonBarViewModel : BindableBase
     {
-
         public DelegateCommand exitCommand;
         public DelegateCommand newCommand;
         public DelegateCommand saveCommand;
         public DelegateCommand browseCommand;
         public string appFolder;
 
-        public MenuBarViewModel()
+        public ButtonBarViewModel()
         {
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
             exitCommand = new DelegateCommand(exitCmd);
-        }
 
+        }
         public DelegateCommand NewCommand
         {
             get { return newCommand; }
@@ -69,7 +62,5 @@ namespace MyBasicApplication.ViewModels
         {
             Environment.Exit(0);
         }
-
     }
 }
-

@@ -142,6 +142,7 @@
     <Compile Include="Converters\XmlHelper.cs" />
     <Compile Include="Converters\ZipArchive.cs" />
     <Compile Include="Core\WebBrowserUtility.cs" />
+    <Compile Include="ViewModels\ButtonBarViewModel.cs" />
     <Compile Include="ViewModels\MainRegionViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MenuBarViewModel.cs" />
