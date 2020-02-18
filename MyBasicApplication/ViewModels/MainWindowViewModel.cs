@@ -10,16 +10,23 @@ using MyBasicApplication.Core;
 using MyBasicApplication.Views;
 using Prism.Commands;
 using System.Windows.Input;
-
+using MyBasicApplication.Properties;
+using MyBasicApplication.Converters;
 
 namespace MyBasicApplication.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        public string ApplDirectory { get { return _applDirectory; } set { SetProperty(ref _applDirectory, value); } }
         private readonly IRegionManager _regionManager;
+        private string _applDirectory;
+
         public MainWindowViewModel(IRegionManager regionManager)
         {
-            
+            ApplDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MyBasicApplication"; // Change "\\MyBasicApplication" to set correct application folder
+            Settings.Default.appfolder = ApplDirectory;
+            Settings.Default.Save();
+            FolderHandling.createFolder(ApplDirectory ); // Add + "\\<subdirectory>" for extra subdirectory
             _regionManager = regionManager;
             _regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(MainRegionView));
             _regionManager.RegisterViewWithRegion(Regions.MenuBarRegion, typeof(MenuBarView));

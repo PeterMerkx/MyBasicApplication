@@ -132,8 +132,8 @@
     <Compile Include="Converters\Get_LogfileData.cs" />
     <Compile Include="Converters\INIFile.cs" />
     <Compile Include="Converters\PartOfString.cs" />
-    <Compile Include="Core\CommandReference.cs" />
-    <Compile Include="Core\DelegateCommand.cs" />
+    <Compile Include="Core\CommonCommands.cs" />
+    <Compile Include="Core\FileHandling.cs" />
     <Compile Include="Core\Regions.cs" />
     <Compile Include="Core\ImageButton.cs" />
     <Compile Include="OfficeStyleWindow.cs" />
@@ -272,6 +272,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

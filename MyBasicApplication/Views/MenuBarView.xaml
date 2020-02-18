@@ -23,20 +23,26 @@
          <DockPanel >
             <Menu DockPanel.Dock="Top" Background="#FFD3E9FF">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_Open..." Command="Open">
+                    <MenuItem Header="_New" Command="{Binding NewCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="/Images/New file.png"/>
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+                    <MenuItem Header="_Open..." Command="{Binding BrowseCommand}">
                         <MenuItem.Icon>
                             <Image Source="/Images/Open file.png"/>
                         </MenuItem.Icon>
 
                     </MenuItem>
-                    <MenuItem Header="Export" Command="{Binding ExportExcel}">
+                    <MenuItem Header="Save" Command="{Binding SaveCommand}">
                         <MenuItem.Icon>
-                            <Image Source="/Images/export_excel.png"/>
+                            <Image Source="/Images/Save.png"/>
                         </MenuItem.Icon>
 
                     </MenuItem>
                     <Separator/>
-                    <MenuItem Header="Exit" Command="{Binding CloseCommand}">
+                    <MenuItem Header="Exit" Command="{Binding ExitCommand}">
                         <MenuItem.Icon>
                             <Image Source="/Images/Exit.png"/>
                         </MenuItem.Icon>

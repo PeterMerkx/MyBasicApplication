@@ -34,5 +34,17 @@ namespace MyBasicApplication.Properties {
                 this["applanguage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string appfolder {
+            get {
+                return ((string)(this["appfolder"]));
+            }
+            set {
+                this["appfolder"] = value;
+            }
+        }
     }
 }

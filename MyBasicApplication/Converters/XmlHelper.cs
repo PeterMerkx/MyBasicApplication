@@ -18,7 +18,7 @@ namespace MyBasicApplication.Converters
         public static string GetItemNames(string srcDir, string _language)
         {
             Settings set = Settings.Default;
-            string mylanguage = _language;
+            MyLanguage = _language;
 
             try
             {

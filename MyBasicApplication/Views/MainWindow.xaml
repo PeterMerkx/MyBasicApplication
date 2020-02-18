@@ -11,7 +11,7 @@
         xmlns:vm="clr-namespace:MyBasicApplication.ViewModels"
         mc:Ignorable="d"
         Style="{StaticResource OfficeStyle}"
-        Title="Base application design" Height="800" Width="1024" WindowStartupLocation="CenterScreen" Icon="/Images/application.png" >
+        Title="My Basic Application" Height="800" Width="1024" WindowStartupLocation="CenterScreen" Icon="/Images/application.png" >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
