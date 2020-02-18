@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MyBasicApplication.Views.ButtonBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyBasicApplication.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:infrastructure="clr-namespace:MyBasicApplication.Core"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="1024" Background="#FFD3E9FF">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Button x:Name="newButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="10,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding NewCommand}">
+            <StackPanel>
+                <Image Source="/Images/New File.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="browseButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="45,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding BrowseCommand}">
+            <StackPanel>
+                <Image Source="/Images/Open File.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="saveButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="80,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding SaveCommand}">
+            <StackPanel>
+                <Image Source="/Images/Save.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="exitButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="115,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ExitCommand}">
+            <StackPanel>
+                <Image Source="/Images/exit.png"></Image>
+            </StackPanel>
+        </Button>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="ButtonBar Area"/>
+    </Grid>
+</UserControl>

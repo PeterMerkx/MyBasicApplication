@@ -1,0 +1,58 @@
+﻿<Window x:Class="MyBasicApplication.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyBasicApplication.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:infrastructure="clr-namespace:MyBasicApplication.Core"
+        WindowState="{Binding WindowState,  Mode=TwoWay}"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:vm="clr-namespace:MyBasicApplication.ViewModels"
+        mc:Ignorable="d"
+        Style="{StaticResource OfficeStyle}"
+        Title="My Basic Application" Height="800" Width="1024" WindowStartupLocation="CenterScreen" Icon="/Images/application.png" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Grid.Row="4">
+        <Border DockPanel.Dock="Bottom" 
+                CornerRadius="0,0,5,5" 
+                BorderThickness="0,1,0,0" 
+                BorderBrush="{StaticResource BorderBrush}" 
+                Background="{StaticResource StatusBackgoundBrush}">
+            <StatusBar Height="20" Background="Transparent" >
+                <StatusBarItem>
+                    <TextBlock Margin="7,0,0,0" Foreground="{StaticResource TabTextBrush}">Ready</TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+        </Border >
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <ContentControl prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MenuBarRegion}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"/>
+            <ContentControl prism:RegionManager.RegionName="{x:Static infrastructure:Regions.ButtonBarRegion}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"/>
+            <ContentControl prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainRegion}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" />
+
+
+
+        </Grid>
+    </DockPanel>
+</Window>
