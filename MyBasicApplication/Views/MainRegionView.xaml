@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MyBasicApplication.Views.MainRegionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyBasicApplication.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:infrastructure="clr-namespace:MyBasicApplication.Core"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="DarkSlateBlue">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="WhiteSmoke" Text="Main Area"/>
+        <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="Select Me ..." Style="{StaticResource ToggleButtonStyle}" ClickMode="Press"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="Click Me ..." Style="{StaticResource 3DButtonStyle}" ClickMode="Press"/>
+    </Grid>
+</UserControl>
