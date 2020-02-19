@@ -215,7 +215,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\MyBasicApplication.Library\MyBasicApplication.Library.csproj">
+      <Project>{b5ab915f-821c-4338-9ffe-7644286065be}</Project>
+      <Name>MyBasicApplication.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\application.png" />
@@ -279,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

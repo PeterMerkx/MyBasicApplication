@@ -12,7 +12,7 @@ namespace MyBasicApplication.Converters
         {
             try
             {
-                iniDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Spectralink Logviewer";
+                iniDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MyBasicApplication";
 
                 string FILENAME = iniDirectory + "\\" + applanguage + ".xml";
                 var doc = new XmlDocument();

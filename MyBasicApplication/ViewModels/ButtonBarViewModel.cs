@@ -13,12 +13,11 @@ namespace MyBasicApplication.ViewModels
 {
     public class ButtonBarViewModel : BindableBase
     {
-        public DelegateCommand exitCommand;
-        public DelegateCommand newCommand;
-        public DelegateCommand saveCommand;
-        public DelegateCommand browseCommand;
-        public string appFolder;
-
+        public  DelegateCommand exitCommand;
+        public  DelegateCommand newCommand;
+        public  DelegateCommand saveCommand;
+        public  DelegateCommand browseCommand;
+        public  string appFolder;
         public ButtonBarViewModel()
         {
             newCommand = new DelegateCommand(newCmd);
@@ -27,40 +26,42 @@ namespace MyBasicApplication.ViewModels
             exitCommand = new DelegateCommand(exitCmd);
 
         }
-        public DelegateCommand NewCommand
+        public  DelegateCommand NewCommand
         {
             get { return newCommand; }
         }
-        public DelegateCommand BrowseCommand
+        public  DelegateCommand BrowseCommand
         {
             get { return browseCommand; }
         }
-        public DelegateCommand SaveCommand
+        public  DelegateCommand SaveCommand
         {
             get { return saveCommand; }
         }
-        public DelegateCommand ExitCommand
+        public  DelegateCommand ExitCommand
         {
             get { return exitCommand; }
         }
-        private void newCmd()
+        private  void newCmd()
         {
             MessageBox.Show("New document started", "Info");
         }
-        private void browseCmd()
+        private  void browseCmd()
         {
             appFolder = Settings.Default.appfolder;
             FileHandling.GetFile(appFolder);
         }
-        private void saveCmd()
+        private  void saveCmd()
         {
             MessageBox.Show("New document saved", "Info");
 
         }
 
-        private void exitCmd()
+        private  void exitCmd()
         {
             Environment.Exit(0);
         }
+
+
     }
 }

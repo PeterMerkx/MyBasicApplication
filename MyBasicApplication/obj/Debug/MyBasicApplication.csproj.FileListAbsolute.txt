@@ -127,3 +127,5 @@ D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\MyBasicApplication
 D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\MyBasicApplication.exe
 D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\MyBasicApplication.pdb
 D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\MyBasicApplication.csprojAssemblyReference.cache
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\bin\Debug\MyBasicApplication.Library.dll
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\bin\Debug\MyBasicApplication.Library.pdb

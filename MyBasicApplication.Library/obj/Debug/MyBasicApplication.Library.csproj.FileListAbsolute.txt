@@ -1,0 +1,5 @@
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.csprojAssemblyReference.cache
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\MyBasicApplication.Library.dll
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\MyBasicApplication.Library.pdb
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.dll
+D:\KPN\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.pdb

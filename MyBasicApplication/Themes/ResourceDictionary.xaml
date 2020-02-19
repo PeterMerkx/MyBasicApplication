@@ -74,7 +74,26 @@
         </Setter>
     </Style>
 
-    
+    <!-- DataGrid Background --><!--
+    <LinearGradientBrush x:Key="BlueLightGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#FFEAF3FF"/>
+        <GradientStop Offset="0.654" Color="#FFC0DEFF"/>
+        <GradientStop Offset="1" Color="#FFC0D9FB"/>
+    </LinearGradientBrush>
+
+    --><!-- DatGrid style --><!--
+    <Style TargetType="{x:Type DataGrid}" x:Key="DataGridStyle">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="{StaticResource BlueLightGradientBrush}" />
+        <Setter Property="BorderBrush" Value="#FFA6CCF2" />
+        <Setter Property="RowBackground" Value="White" />
+        <Setter Property="AlternatingRowBackground" Value="#FDFFD0" />
+        <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
+        <Setter Property="VerticalGridLinesBrush" Value="#FFD3D0" />
+        <Setter Property="RowHeaderWidth" Value="0" />
+    </Style>-->
+
+
     <!--Window Look and Feel-->
     <LinearGradientBrush x:Key="TitleBarBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
         <GradientBrush.GradientStops>

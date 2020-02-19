@@ -26,7 +26,7 @@ namespace MyBasicApplication.ViewModels
             ApplDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MyBasicApplication"; // Change "\\MyBasicApplication" to set correct application folder
             Settings.Default.appfolder = ApplDirectory;
             Settings.Default.Save();
-            FolderHandling.createFolder(ApplDirectory ); // Add + "\\<subdirectory>" for extra subdirectory
+            //FolderHandling.createFolder(ApplDirectory ); // Add + "\\<subdirectory>" for extra subdirectory
             _regionManager = regionManager;
             _regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(MainRegionView));
             _regionManager.RegisterViewWithRegion(Regions.MenuBarRegion, typeof(MenuBarView));
