@@ -20,13 +20,15 @@ namespace MyBasicApplication.Library
         bool[] aliveStatuses = new bool[] { true, false };
         DateTime lowEndDate = new DateTime(1943, 1, 1);
         int daysFromLowDate;
+
         public DataAccess()
         {
             daysFromLowDate = (DateTime.Today - lowEndDate).Days;
         }
-        public List<PersonModel> GetPeople(int total = 10)
+
+        public List<DatabaseModel> GetPeople(int total = 10)
         {
-            List<PersonModel> output = new List<PersonModel>();
+            List<DatabaseModel> output = new List<DatabaseModel>();
 
             for (int i = 0; i < total; i++)
             {
@@ -37,24 +39,16 @@ namespace MyBasicApplication.Library
             return output;
         }
 
-        private PersonModel GetPerson(int id)
+        private DatabaseModel GetPerson(int id)
         {
-            PersonModel output = new PersonModel();
+            DatabaseModel output = new DatabaseModel();
 
-            output.PersonId = id;
+            output.DBId = id;
             output.FirstName = GetRandomItem(firstNames);
             output.LastName = GetRandomItem(lastNames);
-            output.IsAlive = GetRandomItem(aliveStatuses);
             output.DateOfBirth = GetRandomDate();
             output.Age = GetAgeInYears(output.DateOfBirth);
-            output.AccountBalance = ((decimal)rnd.Next(1, 1000000) / 100);
 
-            int addressCount = rnd.Next(1, 5);
-
-            for (int i = 0; i < addressCount; i++)
-            {
-                output.Addresses.Add(GetAddress(((id - 1) * 5) + i + 1));
-            }
 
             return output;
         }

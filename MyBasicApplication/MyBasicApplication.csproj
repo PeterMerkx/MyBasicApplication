@@ -146,6 +146,7 @@
     <Compile Include="ViewModels\MainRegionViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MenuBarViewModel.cs" />
+    <Compile Include="ViewModels\SecondViewModel.cs" />
     <Compile Include="Views\ButtonBarView.xaml.cs">
       <DependentUpon>ButtonBarView.xaml</DependentUpon>
     </Compile>
@@ -161,6 +162,9 @@
     </Compile>
     <Compile Include="Views\MenuBarView.xaml.cs">
       <DependentUpon>MenuBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondView.xaml.cs">
+      <DependentUpon>SecondView.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\ResourceDictionary.xaml">
       <SubType>Designer</SubType>
@@ -183,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MenuBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecondView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

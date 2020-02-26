@@ -25,7 +25,7 @@ namespace MyBasicApplication.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("English")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Nederlands")]
         public string applanguage {
             get {
                 return ((string)(this["applanguage"]));

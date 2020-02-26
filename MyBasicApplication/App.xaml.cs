@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Prism.Ioc;
 using MyBasicApplication.Views;
+using Prism.Events;
 
 namespace MyBasicApplication
 {
@@ -27,6 +28,8 @@ namespace MyBasicApplication
             containerRegistry.RegisterForNavigation<MenuBarView>("MenuBarView");
             containerRegistry.RegisterForNavigation<ButtonBarView>("ButtonBarView");
             containerRegistry.RegisterForNavigation<MainRegionView>("MainRegionView");
+            containerRegistry.RegisterForNavigation<MainRegionView>("SecondView");
+
         }
 
     }

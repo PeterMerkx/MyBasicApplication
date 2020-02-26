@@ -13,25 +13,189 @@ using MyBasicApplication.Core;
 using MyBasicApplication.Views;
 using MyBasicApplication.Properties;
 using MyBasicApplication.Converters;
+using Prism.Events;
+using System.Runtime.CompilerServices;
+using MyBasicApplication.Library;
+using System.IO;
 
 namespace MyBasicApplication.ViewModels
 {
 
     public class MenuBarViewModel : BindableBase
     {
+        public string _menuItemFile;
+        public string _menuItemNew;
+        public string _menuItemBrowse;
+        public string _menuItemExport;
+        public string _menuItemSave;
+        public string _menuItemExit;
+        public string _menuItemEdit;
+        public string _menuItemCut;
+        public string _menuItemCopy;
+        public string _menuItemPaste;
+        public string _menuItemSettings;
+        public string _menuItemLanguage;
+        public string _menuItemNL;
+        public string _menuItemEN;
+        public string _menuItemWindow;
+        public string _menuItemHelp;
+        public string _menuItemAbout;
+        public string _nlSelected;
+        public string _enSelected;
+
+        public bool _nlIsChecked;
+        public bool _enIsChecked;
+
+        public string MenuItemFile { get { return _menuItemFile; } set { SetProperty(ref _menuItemFile, value); } }
+        public string MenuItemNew { get { return _menuItemNew; } set { SetProperty(ref _menuItemNew, value); } }
+        public string MenuItemBrowse { get { return _menuItemBrowse; } set { SetProperty(ref _menuItemBrowse, value); } }
+        public string MenuItemExport { get { return _menuItemExport; } set { SetProperty(ref _menuItemExport, value); } }
+        public string MenuItemSave { get { return _menuItemSave; } set { SetProperty(ref _menuItemSave, value); } }
+        public string MenuItemExit { get { return _menuItemExit; } set { SetProperty(ref _menuItemExit, value); } }
+        public string MenuItemEdit { get { return _menuItemEdit; } set { SetProperty(ref _menuItemEdit, value); } }
+        public string MenuItemCut { get { return _menuItemCut; } set { SetProperty(ref _menuItemCut, value); } }
+        public string MenuItemCopy { get { return _menuItemCopy; } set { SetProperty(ref _menuItemCopy, value); } }
+        public string MenuItemPaste { get { return _menuItemPaste; } set { SetProperty(ref _menuItemPaste, value); } }
+        public string MenuItemSettings { get { return _menuItemSettings; } set { SetProperty(ref _menuItemSettings, value); } }
+        public string MenuItemLanguage { get { return _menuItemLanguage; } set { SetProperty(ref _menuItemLanguage, value); } }
+        public string MenuItemNL { get { return _menuItemNL; } set { SetProperty(ref _menuItemNL, value); } }
+        public string MenuItemEN { get { return _menuItemEN; } set { SetProperty(ref _menuItemEN, value); } }
+        public string MenuItemWindow { get { return _menuItemWindow; } set { SetProperty(ref _menuItemWindow, value); } }
+        public string MenuItemHelp { get { return _menuItemHelp; } set { SetProperty(ref _menuItemHelp, value); } }
+        public string MenuItemAbout { get { return _menuItemAbout; } set { SetProperty(ref _menuItemAbout, value); } }
+        public string NLSelected { get { return _nlSelected; } set { SetProperty(ref _nlSelected, value); } }
+        public string ENSelected { get { return _enSelected; } set { SetProperty(ref _enSelected, value); } }
+
+        public ICommand NLCommand { get; private set; }
+        public ICommand ENCommand { get; private set; }
+            public ICommand Window1Command { get; private set; }
+        public ICommand Window2Command { get; private set; }
 
         public DelegateCommand exitCommand;
         public DelegateCommand newCommand;
         public DelegateCommand saveCommand;
         public DelegateCommand browseCommand;
-        public string appFolder;
+        public DelegateCommand InitializeCommand { get; private set; }
 
-        public MenuBarViewModel()
+        public string appFolder;
+        public IEventAggregator _ea;
+         public MenuBarViewModel()
         {
+            InitializeCommand = new DelegateCommand(Initialize);
+            //_ea = ea;
+            NLCommand = new DelegateCommand(cmdNL);
+            ENCommand = new DelegateCommand(cmdEN);
+            Window1Command = new DelegateCommand(cmdWindow1);
+            Window2Command = new DelegateCommand(cmdWindow2);
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
             exitCommand = new DelegateCommand(exitCmd);
+            SetItemsContent();
+
+
+        }
+
+        private void cmdWindow2()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void cmdWindow1()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetItemsContent()
+        {
+            //menulabels
+            MenuItemNew = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemNew");
+            MenuItemBrowse = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemBrowse");
+            MenuItemExport = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemExport");
+            MenuItemSave = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemSave");
+
+            MenuItemExit = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemExit");
+            MenuItemEdit = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemEdit");
+            MenuItemCut = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemCut");
+            MenuItemCopy = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemCopy");
+            MenuItemPaste = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemPaste");
+            MenuItemSettings = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemSettings");
+            MenuItemLanguage = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemLanguage");
+            MenuItemNL = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemNL");
+            MenuItemEN = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemEN");
+            MenuItemWindow = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemWindow");
+            MenuItemHelp = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemHelp");
+            MenuItemAbout = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemAbout");
+            MenuItemFile = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemFile");
+
+            if (MyLanguage == "Nederlands")
+            {
+                NLIsChecked = true;
+                NLSelected = "Bold";
+                ENIsChecked = false;
+                ENSelected = "Normal";
+
+            }
+            else if (MyLanguage == "English")
+            {
+                NLIsChecked = false;
+                NLSelected = "Normal";
+                ENIsChecked = true;
+                ENSelected = "Bold";
+            }
+
+        }
+        public void cmdNL()
+        {
+            MyLanguage = "Nederlands";
+            NLIsChecked = true;
+            NLSelected = "Bold";
+            ENIsChecked = false;
+            ENSelected = "Normal";
+            GlobalEvents.Instance.Publish(MyLanguage);
+            SetItemsContent();
+        }
+        public void cmdEN()
+        {
+            MyLanguage = "English";
+            NLIsChecked = false;
+            NLSelected = "Normal";
+            ENIsChecked = true;
+            ENSelected = "Bold";
+            GlobalEvents.Instance.Publish(MyLanguage);
+
+            SetItemsContent();
+
+        }
+        public string MyLanguage
+        {
+            get { return Settings.Default.applanguage; }
+            set
+            {
+                Settings.Default.applanguage = value;
+                Settings.Default.Save();
+                RaisePropertyChanged(nameof(MyLanguage));
+                //ButtonBarViewModel bbvm = new ButtonBarViewModel(Settings.Default.applanguage);
+            }
+        }
+        public bool NLIsChecked
+        {
+            get { return _nlIsChecked; }
+            set
+            {
+                _nlIsChecked = value;
+                RaisePropertyChanged(nameof(NLIsChecked));
+
+            }
+        }
+        public bool ENIsChecked
+        {
+            get { return _enIsChecked; }
+            set
+            {
+                _enIsChecked = value;
+                RaisePropertyChanged(nameof(ENIsChecked));
+            }
         }
 
         public DelegateCommand NewCommand
@@ -68,6 +232,12 @@ namespace MyBasicApplication.ViewModels
         private void exitCmd()
         {
             Environment.Exit(0);
+        }
+        public void Initialize()
+        {
+            var dstDirectory = (GlobalVariables.RootPath);
+
+            
         }
 
     }

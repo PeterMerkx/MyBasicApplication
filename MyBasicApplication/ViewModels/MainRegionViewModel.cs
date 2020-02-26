@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MyBasicApplication.Core;
 using System.Windows;
-using MyBasicApplication.Library.Models;
 using System.Collections.ObjectModel;
 using MyBasicApplication.Library;
 using System.Data;
 using MyBasicApplication.Converters;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using MyBasicApplication.Library.Models;
 
 namespace MyBasicApplication.ViewModels
 {
@@ -20,14 +22,16 @@ namespace MyBasicApplication.ViewModels
     {
         public DelegateCommand selectedCommand;
         public DelegateCommand clickedCommand;
-        public ObservableCollection<PersonModel> People { get; set; }
-        public string _dgHeaderDate;
+       public string _dgHeaderDate;
         public string _dgHeaderTime;
         public string _dgHeaderContent;
         public string _dgHeaderValue;
         public string _dgHeaderType;
         public string _dgHeaderMessage;
         public DataTable _tableResult = new DataTable();
+        public string _buttonSelect;
+        public string _buttonClick;
+        public string _txtMainArea;
 
         public DataTable TableResult { get { return _tableResult; } set { SetProperty(ref _tableResult, value); RaisePropertyChanged("TableResult"); } }
 
@@ -37,13 +41,16 @@ namespace MyBasicApplication.ViewModels
         public string DgHeaderValue { get { return _dgHeaderValue; } set { SetProperty(ref _dgHeaderValue, value); } }
         public string DgHeaderType { get { return _dgHeaderType; } set { SetProperty(ref _dgHeaderType, value); } }
         public string DgHeaderMessage { get { return _dgHeaderMessage; } set { SetProperty(ref _dgHeaderMessage, value); } }
-
+        public string ButtonSelect { get { return _buttonSelect; } set { SetProperty(ref _buttonSelect, value); } }
+        public string ButtonClick { get { return _buttonClick; } set { SetProperty(ref _buttonClick, value); } }
+        public string TxtMainArea { get { return _txtMainArea; } set { SetProperty(ref _txtMainArea, value); } }
+        public ObservableCollection<DatabaseModel> People { get; set; }
         public MainRegionViewModel()
         {
             DataAccess da = new DataAccess();
+            People = new ObservableCollection<DatabaseModel>(da.GetPeople());
             selectedCommand = new DelegateCommand(selectedCmd);
             clickedCommand = new DelegateCommand(clickedCmd);
-            People = new ObservableCollection<PersonModel>(da.GetPeople());
 
             DataColumn date = new DataColumn(DgHeaderDate, typeof(string));
             DataColumn time = new DataColumn(DgHeaderTime, typeof(string));
@@ -62,14 +69,10 @@ namespace MyBasicApplication.ViewModels
                 _tableResult.Columns.Add(message);
             }
 
-            //DataGrid
-            DgHeaderDate = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderDate");
-            DgHeaderTime = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderTime");
-            DgHeaderContent = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderContent");
-            DgHeaderValue = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderValue");
-            DgHeaderType = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderType");
-            DgHeaderMessage = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderMessage");
 
+
+            GlobalEvents.Instance.Subscribe(ProcessLanguage);
+            SetItemsContent();
         }
         public string MyLanguage
         {
@@ -80,7 +83,21 @@ namespace MyBasicApplication.ViewModels
                 Properties.Settings.Default.Save();
             }
         }
+        public void SetItemsContent()
+        {
+            //buttonlabels
+            ButtonSelect = INIFile.ReadValue(MyLanguage, "Buttons", "cmdSelect");
+            ButtonClick = INIFile.ReadValue(MyLanguage, "Buttons", "cmdClick");
+            TxtMainArea = INIFile.ReadValue(MyLanguage, "Labels", "txtMainArea");
+            //DataGrid
+            DgHeaderDate = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderDate");
+            DgHeaderTime = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderTime");
+            DgHeaderContent = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderContent");
+            DgHeaderValue = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderValue");
+            DgHeaderType = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderType");
+            DgHeaderMessage = INIFile.ReadValue(MyLanguage, "DataGrid", "dgHeaderMessage");
 
+        }
         public DelegateCommand SelectedCommand
         {
             get { return selectedCommand; }
@@ -89,6 +106,8 @@ namespace MyBasicApplication.ViewModels
         {
             get { return clickedCommand; }
         }
+
+
         private void selectedCmd()
         {
             MessageBox.Show("Selected button clicked", "Info");
@@ -96,6 +115,11 @@ namespace MyBasicApplication.ViewModels
         private void clickedCmd()
         {
             MessageBox.Show("Click button clicked", "Info");
+        }
+        private void ProcessLanguage(string language)
+        {
+            MyLanguage = language;
+            SetItemsContent();
         }
 
     }

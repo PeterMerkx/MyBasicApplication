@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="applanguage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">English</Value>
+      <Value Profile="(Default)">Nederlands</Value>
     </Setting>
     <Setting Name="appfolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

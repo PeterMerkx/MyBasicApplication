@@ -12,6 +12,7 @@ using Prism.Commands;
 using System.Windows.Input;
 using MyBasicApplication.Properties;
 using MyBasicApplication.Converters;
+using Prism.Events;
 
 namespace MyBasicApplication.ViewModels
 {
@@ -21,7 +22,7 @@ namespace MyBasicApplication.ViewModels
         private readonly IRegionManager _regionManager;
         private string _applDirectory;
 
-        public MainWindowViewModel(IRegionManager regionManager)
+        public MainWindowViewModel(IRegionManager regionManager,  IEventAggregator eventAggragator)
         {
             ApplDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MyBasicApplication"; // Change "\\MyBasicApplication" to set correct application folder
             Settings.Default.appfolder = ApplDirectory;
@@ -31,7 +32,7 @@ namespace MyBasicApplication.ViewModels
             _regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(MainRegionView));
             _regionManager.RegisterViewWithRegion(Regions.MenuBarRegion, typeof(MenuBarView));
             _regionManager.RegisterViewWithRegion(Regions.ButtonBarRegion, typeof(ButtonBarView));
-            //_regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(MediaResourceView));
+            //_regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(SecondView));
 
         }
 

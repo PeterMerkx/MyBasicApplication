@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\App.xaml
-6-312323973
+7-1328560800
 
-281513056244
+302021142204
 144785734188
-Themes\ResourceDictionary.xaml;Themes\generic.xaml;Views\ButtonBarView.xaml;Views\MainRegionView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;
+Themes\ResourceDictionary.xaml;Themes\generic.xaml;Views\ButtonBarView.xaml;Views\MainRegionView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;Views\SecondView.xaml;
 
-False
+True
 

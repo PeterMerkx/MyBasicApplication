@@ -3,7 +3,7 @@
 
 namespace MyBasicApplication.Converters
 {
-    internal class Get_LogfileData :INotifyPropertyChanged
+    internal class Get_LogfileData 
     {
  
         public string logDate { get; set; }
@@ -13,6 +13,5 @@ namespace MyBasicApplication.Converters
         public string logType { get; set; }
         public string logMessage { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
