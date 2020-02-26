@@ -14,7 +14,6 @@ using System.Data;
 using MyBasicApplication.Converters;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using MyBasicApplication.Library.Models;
 
 namespace MyBasicApplication.ViewModels
 {
@@ -44,11 +43,8 @@ namespace MyBasicApplication.ViewModels
         public string ButtonSelect { get { return _buttonSelect; } set { SetProperty(ref _buttonSelect, value); } }
         public string ButtonClick { get { return _buttonClick; } set { SetProperty(ref _buttonClick, value); } }
         public string TxtMainArea { get { return _txtMainArea; } set { SetProperty(ref _txtMainArea, value); } }
-        public ObservableCollection<DatabaseModel> People { get; set; }
-        public MainRegionViewModel()
+         public MainRegionViewModel()
         {
-            DataAccess da = new DataAccess();
-            People = new ObservableCollection<DatabaseModel>(da.GetPeople());
             selectedCommand = new DelegateCommand(selectedCmd);
             clickedCommand = new DelegateCommand(clickedCmd);
 
