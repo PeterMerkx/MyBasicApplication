@@ -18,59 +18,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" Foreground="WhiteSmoke" Text="Main Area"/>
-        <ToggleButton HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="{Binding ButtonSelect}" Style="{StaticResource ToggleButtonStyle}" ClickMode="Press" Command="{Binding SelectedCommand}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="{Binding ButtonClick}" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ClickedCommand}"/>
-        <DataGrid x:Name="People" AlternatingRowBackground="Gray" CanUserAddRows="False"
-                  AutoGenerateColumns="False" Width="600" Height="200">
-            <DataGrid.Columns >
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logDate, RelativeSource={RelativeSource AncestorType=DataGrid}}" Width="75">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderDate, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn >
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logTime, RelativeSource={RelativeSource AncestorType=DataGrid}}" Width="75">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderTime, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logContent, RelativeSource={RelativeSource AncestorType=DataGrid}}" Width="75">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderContent, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logValue, RelativeSource={RelativeSource AncestorType=DataGrid}}"  Width="75">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderValue, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logType, RelativeSource={RelativeSource AncestorType=DataGrid}}"  Width="150">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderType, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Binding="{Binding Path=DataContext.logMessage, RelativeSource={RelativeSource AncestorType=DataGrid}}" Width="*">
-                    <DataGridTextColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Path=DataContext.DgHeaderMessage, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
-                        </DataTemplate>
-                    </DataGridTextColumn.HeaderTemplate>
-                </DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>    
+        <TextBlock HorizontalAlignment="Center"   VerticalAlignment="Top" FontSize="40" Foreground="WhiteSmoke" Text="{Binding TxtMainArea}"/>
+        <ToggleButton HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="{Binding ButtonSelect}" Style="{StaticResource ToggleButtonStyle}" ClickMode="Press" Command="{Binding SelectedCommand}"/>
+        <Button HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="{Binding ButtonClick}" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ClickedCommand}"/>
     </Grid>
 </UserControl>

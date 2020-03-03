@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess.cs" />
     <Compile Include="GlobalEvents.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\DatabaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransferEvents.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ using Autofac;
 using Unity;
 
 
-namespace WorkingWithDatabaseMVVM
+namespace MyBasicApplication
 {
     public class Bootstrapper : UnityBootstrapper
     {
