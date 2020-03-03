@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using MyBasicApplication.Core;
+using MyBasicApplication.Library;
 using MyBasicApplication.Views;
 using Prism.Commands;
 using System.Windows.Input;

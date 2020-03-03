@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\
+d:\KPN\GitHub\MyBasicApplication\MyBasicApplication\obj\Debug\
 MyBasicApplication
 none
 false
 DEBUG;TRACE
-D:\KPN\GitHub\MyBasicApplication\MyBasicApplication\App.xaml
+d:\KPN\GitHub\MyBasicApplication\MyBasicApplication\App.xaml
 7-1328560800
 
-302021142204
-144785734188
+29-1049175095
+144-197268646
 Themes\ResourceDictionary.xaml;Themes\generic.xaml;Views\ButtonBarView.xaml;Views\MainRegionView.xaml;Views\MainWindow.xaml;Views\MenuBarView.xaml;Views\SecondView.xaml;
 
-True
+False
 

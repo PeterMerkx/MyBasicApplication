@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyBasicApplication.Views"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:infrastructure="clr-namespace:MyBasicApplication.Core"
+        xmlns:infrastructure="clr-namespace:MyBasicApplication.Library;assembly=MyBasicApplication.Library"
         WindowState="{Binding WindowState,  Mode=TwoWay}"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:vm="clr-namespace:MyBasicApplication.ViewModels"

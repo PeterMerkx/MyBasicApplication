@@ -128,13 +128,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\BooleanToBrushConverter.cs" />
-    <Compile Include="Converters\FolderHandling.cs" />
-    <Compile Include="Converters\Get_LogfileData.cs" />
     <Compile Include="Converters\INIFile.cs" />
     <Compile Include="Converters\PartOfString.cs" />
     <Compile Include="Core\CommonCommands.cs" />
     <Compile Include="Core\FileHandling.cs" />
-    <Compile Include="Core\Regions.cs" />
+    <Compile Include="Core\FolderHandling.cs" />
+    <Compile Include="Core\Get_LogfileData.cs" />
     <Compile Include="Core\ImageButton.cs" />
     <Compile Include="OfficeStyleWindow.cs" />
     <Compile Include="Core\TitleBar.cs" />
