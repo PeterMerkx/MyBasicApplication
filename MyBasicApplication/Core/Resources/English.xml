@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <Labels>
+    <txtFileError>"No file selected"</txtFileError>
+    <txtSearch>"Search"</txtSearch>
+    <txtExport>"Export to Excel"</txtExport>
+    <txtImportLogfile>"Import logfile"</txtImportLogfile>
+  </Labels>
+  <Buttons>
+    <cmdBrowse>"Open"</cmdBrowse>
+	<cmdNew>"New"</cmdNew>
+	<cmdExport>"Export"</cmdExport>
+	<cmdSave>"Save"</cmdSave>
+    <cmdQuit>"Exit"</cmdQuit>
+	<cmdSelect>"Select me"</cmdSelect>
+ 	<cmdBack>"Back"</cmdBack>
+	<cmdClick>"To 2nd view"</cmdClick>
+    <settings>"Settings"</settings>
+  </Buttons>
+  <Import>
+    <importLogfiles>"Import logfiles"</importLogfiles>
+    <importingLogFiles>"importing logfiles..."</importingLogFiles>
+    <importSucces>"Logfiles imported succesfully."</importSucces>
+    <importFailed>"Import failed!"</importFailed>
+  </Import>
+  <MenuItems>
+    <menuItemFile>"File"</menuItemFile>
+	<menuItemNew>"New"</menuItemNew>
+	<menuItemBrowse>"Open..."</menuItemBrowse>
+	<menuItemExport>"Export"</menuItemExport>
+    <menuItemSave>"Save"</menuItemSave>
+	<menuItemExit>"Exit"</menuItemExit>
+    <menuItemEdit>"Edit"</menuItemEdit>
+    <menuItemCut>"Cut"</menuItemCut>
+    <menuItemCopy>"Copy"</menuItemCopy>
+    <menuItemPaste>"Paste"</menuItemPaste>
+    <menuItemSettings>"Settings"</menuItemSettings>
+    <menuItemLanguage>"Language"</menuItemLanguage>
+	<menuItemNL>"Dutch"</menuItemNL>
+	<menuItemEN>"English"</menuItemEN>
+    <menuItemWindow>"Window"</menuItemWindow>
+	<menuItemWindow1>"Main view"</menuItemWindow1>
+	<menuItemWindow2>"Second view"</menuItemWindow2>
+	<menuItemHelp>"Help"</menuItemHelp>
+    <menuItemAbout>"About"</menuItemAbout>
+  </MenuItems>
+</root>

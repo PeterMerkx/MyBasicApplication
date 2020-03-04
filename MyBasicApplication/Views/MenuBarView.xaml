@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MyBasicApplication.Views.MenuBarView"
+﻿<UserControl x:Class="MyBasicApplication.Views.MenuBarView" x:Name="MenuBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,12 +19,8 @@
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </UserControl.Resources>
-    <UserControl.DataContext>
-        <vm:MenuBarViewModel/>
-    </UserControl.DataContext>
-
     <Grid>
-         <DockPanel >
+         <DockPanel HorizontalAlignment="Left" MinWidth="500">
             <Menu DockPanel.Dock="Top" Background="#FFD3E9FF">
                 <MenuItem Header="{Binding MenuItemFile}">
                     <MenuItem Header="{Binding MenuItemNew}" Command="{Binding NewCommand}">
@@ -88,8 +84,8 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="WindowItem" Header="{Binding MenuItemWindow}">
-                    <MenuItem Header="Window1"/>
-                    <MenuItem Header="Window2"/>
+                    <MenuItem Header="{Binding MenuItemWindow1}" Command="{Binding NavigateToMainRegionViewCommand}"/>
+                    <MenuItem Header="{Binding MenuItemWindow2}" Command="{Binding NavigateToSecondViewCommand}"/>
                 </MenuItem>
                 <MenuItem x:Name="HelpItem" Header="{Binding MenuItemHelp}">
                     <MenuItem x:Name="AboutItem" Header="{Binding MenuItemAbout}">
@@ -102,6 +98,8 @@
             </Menu>
 
         </DockPanel>
+<!--Remove TextBlock below-->
+        <TextBlock HorizontalAlignment="Center" Width="200" FontSize="14" Text="{Binding TxtMenuArea}"/>
 
     </Grid>
 </UserControl>

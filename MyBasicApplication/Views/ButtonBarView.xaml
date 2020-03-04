@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MyBasicApplication.Views.ButtonBarView"
+﻿<UserControl x:Class="MyBasicApplication.Views.ButtonBarView" x:Name="ButtonBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -37,6 +37,7 @@
                 <Image Source="/Images/exit.png"></Image>
             </StackPanel>
         </Button>
+        <!--Remove TextBlock below-->
         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{Binding TxtButtonArea}"/>
     </Grid>
 </UserControl>

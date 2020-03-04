@@ -61,15 +61,22 @@ namespace MyBasicApplication.ViewModels
         public string MenuItemNL { get { return _menuItemNL; } set { SetProperty(ref _menuItemNL, value); } }
         public string MenuItemEN { get { return _menuItemEN; } set { SetProperty(ref _menuItemEN, value); } }
         public string MenuItemWindow { get { return _menuItemWindow; } set { SetProperty(ref _menuItemWindow, value); } }
+
+        public string MenuItemWindow1 { get { return _menuItemWindow1; } set { SetProperty(ref _menuItemWindow1, value); } }
+        public string MenuItemWindow2 { get { return _menuItemWindow2; } set { SetProperty(ref _menuItemWindow2, value); } }
+
         public string MenuItemHelp { get { return _menuItemHelp; } set { SetProperty(ref _menuItemHelp, value); } }
         public string MenuItemAbout { get { return _menuItemAbout; } set { SetProperty(ref _menuItemAbout, value); } }
+        public string TxtMenuArea { get { return _txtMenuArea; } set { SetProperty(ref _txtMenuArea, value); } }
         public string NLSelected { get { return _nlSelected; } set { SetProperty(ref _nlSelected, value); } }
         public string ENSelected { get { return _enSelected; } set { SetProperty(ref _enSelected, value); } }
 
+        private IRegionManager _regionManager;
+
         public ICommand NLCommand { get; private set; }
         public ICommand ENCommand { get; private set; }
-            public ICommand Window1Command { get; private set; }
-        public ICommand Window2Command { get; private set; }
+        public ICommand NavigateToMainRegionViewCommand { get; private set; }
+        public ICommand NavigateToSecondViewCommand { get; private set; }
 
         public DelegateCommand exitCommand;
         public DelegateCommand newCommand;
@@ -79,14 +86,19 @@ namespace MyBasicApplication.ViewModels
 
         public string appFolder;
         public IEventAggregator _ea;
-         public MenuBarViewModel()
+        private string _menuItemWindow1;
+        private string _menuItemWindow2;
+        private string _txtMenuArea;
+
+        public MenuBarViewModel(IRegionManager regionManager)
         {
-            InitializeCommand = new DelegateCommand(Initialize);
+            //InitializeCommand = new DelegateCommand(Initialize);
             //_ea = ea;
+            _regionManager = regionManager;
             NLCommand = new DelegateCommand(cmdNL);
             ENCommand = new DelegateCommand(cmdEN);
-            Window1Command = new DelegateCommand(cmdWindow1);
-            Window2Command = new DelegateCommand(cmdWindow2);
+            NavigateToMainRegionViewCommand = new DelegateCommand(() => NavigateTo("MainRegionView"));
+            NavigateToSecondViewCommand = new DelegateCommand(() => NavigateTo("SecondView"));
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
@@ -96,14 +108,9 @@ namespace MyBasicApplication.ViewModels
 
         }
 
-        private void cmdWindow2()
+        private void NavigateTo(string url)
         {
-            throw new NotImplementedException();
-        }
-
-        private void cmdWindow1()
-        {
-            throw new NotImplementedException();
+            _regionManager.RequestNavigate(Regions.MainRegion, url);
         }
 
         public void SetItemsContent()
@@ -124,9 +131,12 @@ namespace MyBasicApplication.ViewModels
             MenuItemNL = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemNL");
             MenuItemEN = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemEN");
             MenuItemWindow = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemWindow");
+            MenuItemWindow1 = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemWindow1");
+            MenuItemWindow2 = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemWindow2");
             MenuItemHelp = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemHelp");
             MenuItemAbout = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemAbout");
             MenuItemFile = INIFile.ReadValue(MyLanguage, "MenuItems", "menuItemFile");
+            TxtMenuArea = "MenuBar";
 
             if (MyLanguage == "Nederlands")
             {
@@ -237,7 +247,7 @@ namespace MyBasicApplication.ViewModels
         {
             var dstDirectory = (GlobalVariables.RootPath);
 
-            
+
         }
 
     }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MyBasicApplication.Views.MainRegionView"
+﻿<UserControl x:Class="MyBasicApplication.Views.MainRegionView" x:Name="MainView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -18,8 +18,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Center"   VerticalAlignment="Top" FontSize="40" Foreground="WhiteSmoke" Text="{Binding TxtMainArea}"/>
-        <ToggleButton HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="{Binding ButtonSelect}" Style="{StaticResource ToggleButtonStyle}" ClickMode="Press" Command="{Binding SelectedCommand}"/>
-        <Button HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="{Binding ButtonClick}" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ClickedCommand}"/>
+        <TextBlock HorizontalAlignment="Center"   VerticalAlignment="Top" FontSize="72" FontWeight="Bold" Foreground="WhiteSmoke" Text="{Binding TxtMainArea}"/>
+        <ToggleButton HorizontalAlignment="Left" Width="120" Height="40" VerticalAlignment="Top" Margin="16,16" Padding="16,8" Content="{Binding ButtonSelect}" Style="{StaticResource ToggleButtonStyle}" ClickMode="Press" Command="{Binding SelectedCommand}" />
+        <Button HorizontalAlignment="Left" Width="120" Height="40" VerticalAlignment="Top" Margin="16,66" Padding="16,8" Content="{Binding ButtonClick}" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding NavigateToSecondViewCommand}" />
     </Grid>
 </UserControl>

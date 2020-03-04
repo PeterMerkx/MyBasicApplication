@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <Labels>
+    <txtFileError>"Geen bestand geselecteerd!"</txtFileError>
+    <txtSearch>"Zoeken"</txtSearch>
+    <txtExport>"Exporteer naar Excel"</txtExport>
+    <txtImportLogfile>"Importeer logfile"</txtImportLogfile>
+  </Labels>
+  <Buttons>
+	<cmdNew>"Nieuw"</cmdNew>
+	<cmdBrowse>"Openen"</cmdBrowse>
+	<cmdExport>"Exporteren"</cmdExport>
+	<cmdSave>"Opslaan"</cmdSave> 
+	<cmdQuit>"Afsluiten"</cmdQuit>
+	<cmdSelect>"Selecteer me"</cmdSelect>
+	<cmdClick>"Naar 2e scherm"</cmdClick>
+ 	<cmdBack>"Terug"</cmdBack>
+   <settings>"Instellingen"</settings>
+  </Buttons>
+  <Import>
+    <importLogfiles>"Importeer logfiles"</importLogfiles>
+    <importingLogFiles>"importeren logfiles..."</importingLogFiles>
+    <importSucces>"Logfiles succesvol geïmporteerd."</importSucces>
+    <importFailed>"Importeren mislukt!"</importFailed>
+  </Import>
+  <MenuItems>
+    <menuItemFile>"Bestand"</menuItemFile>
+    <menuItemBrowse>"Openen..."</menuItemBrowse>
+	<menuItemNew>"Nieuw"</menuItemNew>
+	<menuItemSave>"Opslaan"</menuItemSave>
+	<menuItemExport>"Exporteren"</menuItemExport>
+    <menuItemExit>"Afsluiten"</menuItemExit>
+    <menuItemEdit>"Bewerken"</menuItemEdit>
+    <menuItemCut>"Knippen"</menuItemCut>
+    <menuItemCopy>"Kopiëren"</menuItemCopy>
+    <menuItemPaste>"Plakken"</menuItemPaste>
+    <menuItemSettings>"Instellingen"</menuItemSettings>
+    <menuItemLanguage>"Taal"</menuItemLanguage>
+	<menuItemNL>"Nederlands"</menuItemNL>
+	<menuItemEN>"Engels"</menuItemEN>
+    <menuItemWindow>"Venster"</menuItemWindow>
+	<menuItemWindow1>"Hoofd scherm"</menuItemWindow1>
+	<menuItemWindow2>"Tweede scherm"</menuItemWindow2>
+	<menuItemHelp>"Help"</menuItemHelp>
+    <menuItemAbout>"Over"</menuItemAbout>
+  </MenuItems>
+</root>

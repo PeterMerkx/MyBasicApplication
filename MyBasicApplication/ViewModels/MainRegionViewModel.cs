@@ -14,24 +14,27 @@ using System.Data;
 using MyBasicApplication.Converters;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Prism.Regions;
 
 namespace MyBasicApplication.ViewModels
 {
     public class MainRegionViewModel : BindableBase
     {
         public DelegateCommand selectedCommand;
-        public DelegateCommand clickedCommand;
         public string _buttonSelect;
         public string _buttonClick;
         public string _txtMainArea;
+        private IRegionManager _regionManager;
+        public ICommand NavigateToSecondViewCommand { get; private set; }
 
         public string ButtonSelect { get { return _buttonSelect; } set { SetProperty(ref _buttonSelect, value); } }
         public string ButtonClick { get { return _buttonClick; } set { SetProperty(ref _buttonClick, value); } }
         public string TxtMainArea { get { return _txtMainArea; } set { SetProperty(ref _txtMainArea, value); } }
-        public MainRegionViewModel()
+        public MainRegionViewModel(IRegionManager regionManager)
         {
+            _regionManager = regionManager;
             selectedCommand = new DelegateCommand(selectedCmd);
-            clickedCommand = new DelegateCommand(clickedCmd);
+            NavigateToSecondViewCommand = new DelegateCommand(() => NavigateTo("SecondView"));
             GlobalEvents.Instance.Subscribe(ProcessLanguage);
             SetItemsContent();
         }
@@ -49,16 +52,17 @@ namespace MyBasicApplication.ViewModels
             //buttonlabels
             ButtonSelect = INIFile.ReadValue(MyLanguage, "Buttons", "cmdSelect");
             ButtonClick = INIFile.ReadValue(MyLanguage, "Buttons", "cmdClick");
-            TxtMainArea = INIFile.ReadValue(MyLanguage, "Labels", "txtMainArea");
+            TxtMainArea = "MainArea";
 
         }
+        private void NavigateTo(string url)
+        {
+            _regionManager.RequestNavigate(Regions.MainRegion, url);
+        }
+
         public DelegateCommand SelectedCommand
         {
             get { return selectedCommand; }
-        }
-        public DelegateCommand ClickedCommand
-        {
-            get { return clickedCommand; }
         }
 
 

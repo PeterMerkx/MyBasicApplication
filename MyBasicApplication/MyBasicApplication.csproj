@@ -135,6 +135,7 @@
     <Compile Include="Core\FolderHandling.cs" />
     <Compile Include="Core\Get_LogfileData.cs" />
     <Compile Include="Core\ImageButton.cs" />
+    <Compile Include="Core\MainModule.cs" />
     <Compile Include="OfficeStyleWindow.cs" />
     <Compile Include="Core\TitleBar.cs" />
     <Compile Include="Core\ViewModelBase.cs" />
@@ -292,6 +293,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\Resources\English.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Resources\Nederlands.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

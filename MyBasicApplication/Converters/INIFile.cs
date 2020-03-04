@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.Xml;
 using MyBasicApplication.Library;
 
@@ -14,8 +15,8 @@ namespace MyBasicApplication.Converters
         {
             try
             {
-                iniDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MyBasicApplication";
-                string FILENAME = iniDirectory + "\\" + applanguage + ".xml";
+                iniDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string FILENAME = iniDirectory + "Core\\Resources\\" + applanguage + ".xml";
                 var doc = new XmlDocument();
                 doc.Load(FILENAME);
                 var items = doc.GetElementsByTagName("root");

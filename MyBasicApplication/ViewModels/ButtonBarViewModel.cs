@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Prism.Events;
 using MyBasicApplication.Library;
+using Prism.Regions;
 
 namespace MyBasicApplication.ViewModels
 {
@@ -29,8 +30,9 @@ namespace MyBasicApplication.ViewModels
         public string _buttonExport;
         public string _buttonExit;
         public string _txtButtonArea;
+        private IRegionManager _regionManager;
 
-        
+
 
         public string ButtonNew { get { return _buttonNew; } set { SetProperty(ref _buttonNew, value); }  }
         public string ButtonBrowse { get { return _buttonBrowse; } set { SetProperty(ref _buttonBrowse, value); } }
@@ -39,8 +41,9 @@ namespace MyBasicApplication.ViewModels
         public string ButtonExit {  get { return _buttonExit; } set { SetProperty(ref _buttonExit, value); } }
         public string TxtButtonArea { get { return _txtButtonArea; } set { SetProperty(ref _txtButtonArea, value); } }
 
-        public ButtonBarViewModel()
+        public ButtonBarViewModel(IRegionManager regionManager)
         {
+            _regionManager = regionManager;
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
@@ -104,7 +107,7 @@ namespace MyBasicApplication.ViewModels
             ButtonSave = INIFile.ReadValue(MyLanguage, "Buttons", "cmdSave");
             ButtonExport = INIFile.ReadValue(MyLanguage, "Buttons", "cmdExport");
             ButtonExit = INIFile.ReadValue(MyLanguage, "Buttons", "cmdQuit");
-            TxtButtonArea = INIFile.ReadValue(MyLanguage, "Labels", "txtButtonArea");
+            TxtButtonArea = "ButtonBar";
 
         }
         public string MyLanguage
