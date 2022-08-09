@@ -69,6 +69,9 @@
                 </MenuItem>
                 <MenuItem x:Name="SettingsItem" Header="{Binding MenuItemSettings}">
                     <MenuItem x:Name="LanguageItem" Header="{Binding MenuItemLanguage}">
+                        <MenuItem.Icon>
+                            <Image Source="/Images/language.png"/>
+                        </MenuItem.Icon>
                         <MenuItem x:Name="SettingsNL" Header="{Binding MenuItemNL}" Command="{Binding NLCommand, Mode=OneWay}" FontWeight="{Binding NLSelected, Mode=OneWay}">
                             <MenuItem.Icon>
                                 <Image Source="/Images/NL.jpg"/>
@@ -88,6 +91,13 @@
                     <MenuItem Header="{Binding MenuItemWindow2}" Command="{Binding NavigateToSecondViewCommand}"/>
                 </MenuItem>
                 <MenuItem x:Name="HelpItem" Header="{Binding MenuItemHelp}">
+                    <MenuItem x:Name="ItemHelp" Header="{Binding MenuItemHelp}" Command="{Binding HelpCommand, Mode=OneWay}">
+                        <MenuItem.Icon>
+                            <Image Source="/Images/help.png"/>
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
                     <MenuItem x:Name="AboutItem" Header="{Binding MenuItemAbout}">
                         <MenuItem.Icon>
                             <Image Source="/Images/About.png"/>

@@ -23,11 +23,15 @@ namespace MyBasicApplication.ViewModels
         public DelegateCommand newCommand;
         public DelegateCommand saveCommand;
         public DelegateCommand browseCommand;
+        public DelegateCommand settingsCommand;
+        public DelegateCommand helpCommand;
         public string _appFolder;
         public string _buttonNew;
         public string _buttonBrowse;
         public string _buttonSave;
         public string _buttonExport;
+        public string _buttonSettings;
+        public string _buttonHelp;
         public string _buttonExit;
         public string _txtButtonArea;
         private IRegionManager _regionManager;
@@ -38,6 +42,8 @@ namespace MyBasicApplication.ViewModels
         public string ButtonBrowse { get { return _buttonBrowse; } set { SetProperty(ref _buttonBrowse, value); } }
         public string ButtonSave { get { return _buttonSave; } set { SetProperty(ref _buttonSave, value); } }
         public string ButtonExport { get { return _buttonExport; } set { SetProperty(ref _buttonExport, value); } }
+        public string ButtonSettings { get { return _buttonSettings; } set { SetProperty(ref _buttonSettings, value); } }
+        public string ButtonHelp { get { return _buttonHelp; } set { SetProperty(ref _buttonHelp, value); } }
         public string ButtonExit {  get { return _buttonExit; } set { SetProperty(ref _buttonExit, value); } }
         public string TxtButtonArea { get { return _txtButtonArea; } set { SetProperty(ref _txtButtonArea, value); } }
 
@@ -47,6 +53,8 @@ namespace MyBasicApplication.ViewModels
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
+            settingsCommand = new DelegateCommand(settingsCmd);
+            helpCommand = new DelegateCommand(helpCmd);
             exitCommand = new DelegateCommand(exitCmd);
             GlobalEvents.Instance.Subscribe(ProcessLanguage);
             SetItemsContent();
@@ -75,6 +83,14 @@ namespace MyBasicApplication.ViewModels
         {
             get { return saveCommand; }
         }
+        public DelegateCommand SettingsCommand
+        {
+            get { return settingsCommand; }
+        }
+        public DelegateCommand HelpCommand
+        {
+            get { return helpCommand; }
+        }
         public DelegateCommand ExitCommand
         {
             get { return exitCommand; }
@@ -93,7 +109,15 @@ namespace MyBasicApplication.ViewModels
             MessageBox.Show("New document saved", "Info");
 
         }
+        private void settingsCmd()
+        {
+            MessageBox.Show("Settings form started", "Info");
+        }
 
+        private void helpCmd()
+        {
+            MessageBox.Show("Help form started", "Info");
+        }
         private void exitCmd()
         {
             Environment.Exit(0);

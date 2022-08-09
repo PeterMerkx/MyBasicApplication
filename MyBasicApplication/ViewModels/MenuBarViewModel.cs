@@ -82,6 +82,7 @@ namespace MyBasicApplication.ViewModels
         public DelegateCommand newCommand;
         public DelegateCommand saveCommand;
         public DelegateCommand browseCommand;
+        public DelegateCommand helpCommand;
         public DelegateCommand InitializeCommand { get; private set; }
 
         public string appFolder;
@@ -102,6 +103,7 @@ namespace MyBasicApplication.ViewModels
             newCommand = new DelegateCommand(newCmd);
             browseCommand = new DelegateCommand(browseCmd);
             saveCommand = new DelegateCommand(saveCmd);
+            helpCommand = new DelegateCommand(helpCmd);
             exitCommand = new DelegateCommand(exitCmd);
             SetItemsContent();
 
@@ -220,6 +222,10 @@ namespace MyBasicApplication.ViewModels
         {
             get { return saveCommand; }
         }
+        public DelegateCommand HelpCommand
+        {
+            get { return helpCommand; }
+        }
         public DelegateCommand ExitCommand
         {
             get { return exitCommand; }
@@ -236,6 +242,11 @@ namespace MyBasicApplication.ViewModels
         private void saveCmd()
         {
             MessageBox.Show("New document saved", "Info");
+
+        }
+        private void helpCmd()
+        {
+            MessageBox.Show("Help document getoond", "Info");
 
         }
 

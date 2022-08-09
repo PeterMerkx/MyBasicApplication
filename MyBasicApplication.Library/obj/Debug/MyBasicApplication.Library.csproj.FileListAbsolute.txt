@@ -20,3 +20,15 @@ D:\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplica
 D:\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.csproj.CopyComplete
 D:\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.dll
 D:\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.pdb
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\MyBasicApplication.Library.dll
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\MyBasicApplication.Library.pdb
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\Prism.dll
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\System.ValueTuple.dll
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\Prism.pdb
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\Prism.xml
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\bin\Debug\System.ValueTuple.xml
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.csproj.AssemblyReference.cache
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.csproj.CoreCompileInputs.cache
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.csproj.CopyComplete
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.dll
+D:\VSProjects\GitHub\MyBasicApplication\MyBasicApplication.Library\obj\Debug\MyBasicApplication.Library.pdb

@@ -32,12 +32,20 @@
                 <Image Source="/Images/Save.png"></Image>
             </StackPanel>
         </Button>
-        <Button x:Name="exitButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="115,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ExitCommand}" ToolTip="{Binding ButtonExit}">
+        <Button x:Name="settingsButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="115,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding SettingsCommand}" ToolTip="{Binding ButtonSettings}">
+            <StackPanel>
+                <Image Source="/Images/settings.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="helpButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="150,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding HelpCommand}" ToolTip="{Binding ButtonHelp}">
+            <StackPanel>
+                <Image Source="/Images/help.png"></Image>
+            </StackPanel>
+        </Button>
+        <Button x:Name="exitButton" Height="30" Width="30" HorizontalAlignment="Left" Margin="185,0,0,0" Style="{StaticResource 3DButtonStyle}" ClickMode="Press" Command="{Binding ExitCommand}" ToolTip="{Binding ButtonExit}">
             <StackPanel>
                 <Image Source="/Images/exit.png"></Image>
             </StackPanel>
         </Button>
-        <!--Remove TextBlock below-->
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{Binding TxtButtonArea}"/>
     </Grid>
 </UserControl>
